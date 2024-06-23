@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Sevillana&display=swap');
+
+body{
+    font-family: "Sevillana", cursive;
+}
+:root {
+    --gradient-color-1: #c93939; /* Red */
+    --gradient-color-2: #3fac3f; /* Green */
+    --gradient-color-3: #3939a9; /* Blue */
+    --gradient-color-4: #9b9b38; /* Yellow */
+    --gradient-color-5: #8d318d; /* Magenta */
+    
+}
+.custom-gradient {
+    background: linear-gradient(to right, var(--gradient-color-1), var(--gradient-color-2), var(--gradient-color-3), var(--gradient-color-4), var(--gradient-color-5));
+}
+.colorBox{
+    animation: 20s spin linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotateY(45deg) rotateZ(0deg)
+    }
+    to {
+        transform: rotateY(45deg) rotateZ(360deg)
+    }
+}
+
+.left{
+    border: 2px solid black;
+    width: 20px;
+    height: 18px;
+    border-radius: 100%;
+    position: absolute;
+    margin: -1px;
+    background-color: black;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: moveright 1ms ease-in-out 0s 1 normal forwards;
+    transition-timing-function: ease-in-out;
+}
+.right{
+    border: 2px solid black;
+    width: 20px;
+    height: 18px;
+    border-radius: 100%;
+    position: absolute;
+    margin: -1px;
+    background-color: black;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: moveleft 1ms ease-in-out 0s 1 normal forwards;
+    transition-timing-function: ease-in-out;
+}
+
+@keyframes moveright {
+    from{
+        top: 0;
+        left: 0px;
+    }
+    to{
+        top: 0;
+        right: 0px;
+    }
+}
+@keyframes moveleft {
+    from{
+        top: 0;
+        right: 0px;
+    }
+    to{
+        top: 0;
+        left: 0px;
+    }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
